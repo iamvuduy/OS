@@ -38,7 +38,7 @@ void EnterCommand(char command[], char history_command[][MAX_LINE], int count_HF
             if (getchar() == 91)
             {
                 char dir = getchar();
-                if (dir == 'UP') // UP
+                if (dir == 'U') // UP
                 {
                     if (*index > 0)
                         (*index)--;
@@ -48,7 +48,7 @@ void EnterCommand(char command[], char history_command[][MAX_LINE], int count_HF
                     strcpy(command, history_command[*index]);
                     pos = strlen(command);
                 }
-                else if (dir == 'DOWN') // DOWN
+                else if (dir == 'D') // DOWN
                 {
                     if (*index < count_HF - 1)
                         (*index)++;
