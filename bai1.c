@@ -38,7 +38,7 @@ void EnterCommand(char command[], char history_command[][MAX_LINE], int count_HF
             if (getchar() == 91)
             {
                 char dir = getchar();
-                if (dir == 'U') // UP
+                if (dir == 'A') // UP
                 {
                     if (*index > 0)
                         (*index)--;
@@ -48,7 +48,7 @@ void EnterCommand(char command[], char history_command[][MAX_LINE], int count_HF
                     strcpy(command, history_command[*index]);
                     pos = strlen(command);
                 }
-                else if (dir == 'D') // DOWN
+                else if (dir == 'B') // DOWN
                 {
                     if (*index < count_HF - 1)
                         (*index)++;
@@ -71,12 +71,13 @@ void EnterCommand(char command[], char history_command[][MAX_LINE], int count_HF
             if (pos < MAX_LINE - 1)
             {
                 command[pos++] = ch;
-                putchar(ch);
+                // Không in ký tự ra màn hình
                 *index = count_HF; // reset index vì đang gõ lệnh mới
             }
         }
     }
 }
+
 
 
 void Tokernizer(char *tokens[], char *source, char *delim, int *num_of_words)
@@ -354,7 +355,6 @@ int main(void)
         }
         else
         {
-            Execute_pile(First_Command, Second_command);
-        }
+            Execute_pile(First_Command, Second_command);  }
     }
     return 0;}
