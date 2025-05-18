@@ -71,8 +71,8 @@ void EnterCommand(char command[], char history_command[][MAX_LINE], int count_HF
             if (pos < MAX_LINE - 1)
             {
                 command[pos++] = ch;
-                // Không in ký tự ra màn hình
-                *index = count_HF; // reset index vì đang gõ lệnh mới
+
+                *index = count_HF; 
             }
         }
     }
